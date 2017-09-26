@@ -1,14 +1,14 @@
 //Variablen
-var a = 1;
-var b = 2;
-console.log(a);
-console.log(b);
+//var a = 1;
+//var b = 2;
+//console.log(a);
+//console.log(b);
 //operatoren
- var foo = 1;
- var bar = 2;
+ //var foo = 1;
+ //var bar = 2;
  
- var result = (foo == bar);
- console.log(result);
+ //var result = (foo == bar);
+ //console.log(result);
  
  //
 // if else wie java sowie while und for
@@ -17,7 +17,21 @@ function meineFunktion(){
 }
 var myButton = document.getElementById("myButton");
 myButton.addEventListener('mousedown',function(e){
-	console.log("you clicked a Button, bro");
+	checkInput();
+	
+});
+function checkInput(){
+	var input = document.getElementById("myInput").value;
+	var parag = document.getElementById("myParagraph");
+	if(input > 127 || input < 0 ){
+		parag.innerHTML = "Bitte nur Nummern zwischen 0 und 127 eingeben";
+	}
+	else if(input < 128 && input >= 0){
+		parag.innerHTML = allFrequencies[input] + " Hertz";
+	}
+	else{
+		parag.innerHTML = "Bitte nur Nummern eintragen";
+	}
 	
 }
 
